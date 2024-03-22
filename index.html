@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Manter Cliente</title>
+
+</head>
+<body>
+    <h2>Cadastrar Cliente</h2>
+
+    <form action="http://localhost:83/app/index.php" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome"><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade"><br>
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" name="estado"><br><br>
+        <button type="button" id="btnCreate">Enviar</button>
+        <p id="mCreate"></p>
+    </form>
+
+    <h2>Consultar Todos os Cliente</h2>
+
+    <table id="tabelaClientes"></table>
+    <p id="mRead"></p>
+
+    <h2>Consultar Um Cliente</h2>
+    <form id="formUpdate">
+        <input type="number" name="cliente_id_search" id="cliente_id_search">
+        <button type="button" id="btnSearch">Pesquisar</button>
+    
+        <table id="tabelaCliente"></table>
+    </form>
+    <p id="mSearch"></p>
+    
+
+    <h2>Alterar Cliente</h2>
+    <form>
+        <input type="number" name="cliente_id_update" id="cliente_id_update">
+        <button type="button" id="btnUpdateSearch">Encontrar</button>
+
+        <div id="clienteData"></div>
+        <button type="button" id="btnUpdate">Alterar</button>
+    </form>
+    <p id="mUpdate"></p>
+
+    <h2>Deletar Cliente</h2>
+    <form>
+        <input type="number" name="cliente_id_delete" id="cliente_id_delete">
+        <button type="button" id="btnDeletee">Deletar</button>
+    </form>
+
+    <p id="mDeletee"></p>
+    
+    <p id="mDeletee"></p>
+
+    <script src="public/js/create.js" ></script>
+    <script src="public/js/read.js"></script>
+    <script src="public/js/search.js"></script>
+    <script src="public/js/deletee.js"></script>
+    <script src="public/js/update.js"></script>
+
+    <script>
+        
+    tabelaClientes.onload = read("http://localhost:83/app/index.php");
+
+    btnCreate.onclick = function() {create("http://localhost:83/app/index.php");};
+
+    btnSearch.onclick = function() 
+    {
+        const cliente_id_search = document.getElementById("cliente_id_search").value;
+        search(`http://localhost:83/app/index.php?cliente_id=${cliente_id_search}`);
+    };
+    
+    btnDeletee.onclick = function() 
+    {
+        const cliente_id_delete = document.getElementById("cliente_id_delete").value;
+        deletee(`http://localhost:83/app/index.php?cliente_id=${cliente_id_delete}`);
+    };
+
+    btnUpdateSearch.onclick = function() 
+    {
+        const cliente_id_update = document.getElementById("cliente_id_update").value;
+        updateSearch(`http://localhost:83/app/index.php?cliente_id=${cliente_id_update}`);
+    };
+
+    btnUpdate.onclick = function() 
+    {
+        const cliente_id_update = document.getElementById("cliente_id_update").value;
+        update(`http://localhost:83/app/index.php?cliente_id=${cliente_id_update}`);
+    };
+    </script>
+</body>
+</html>
