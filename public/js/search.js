@@ -21,7 +21,8 @@ async function search(urli)
 
         if (data) 
         {
-            tabelaCliente.innerHTML = "";
+            const tbodySearch = document.getElementById("tbodySearch")
+            tbodySearch.innerHTML = "";
 
             const tr = document.createElement("tr");
             tr.innerHTML = `
@@ -32,7 +33,7 @@ async function search(urli)
                 <td>${data.estado}</td>
 
             `;
-            tabelaCliente.appendChild(tr);
+            tbodySearch.appendChild(tr);
         } 
         else 
         {

@@ -19,10 +19,13 @@
     {
         const cliente_id_update = document.getElementById("cliente_id_update").value;
         updateSearch(`http://localhost:83/app/index.php?cliente_id=${cliente_id_update}`);
+        btnUpdate.style.display = "block"
     };
 
     btnUpdate.onclick = function() 
     {
         const cliente_id_update = document.getElementById("cliente_id_update").value;
+
         update(`http://localhost:83/app/index.php?cliente_id=${cliente_id_update}`);
+        
     };

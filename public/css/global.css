@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Laila:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&display=swap');
+body
+{
+    /*Background*/
+        background-color: #1e2124;
+
+    /*Text*/
+        color: white;
+        font-family: "Hind Madurai", sans-serif;
+
+    /*Box-sizing*/
+        box-sizing: border-box;
+}
+
+/*Titulo "Informações dos Clientes"*/
+    .Main-Title
+    {
+        /*Text*/
+            font-family: "Lexend Giga", sans-serif;
+            text-align: center;
+            font-size: 3vw;
+        
+        /*Position*/
+            padding-top: 2vw;
+            margin-bottom: 2vw;
+            
+    }
+
+/*Estilo das Tabelas (READ e SEARCH)*/
+    .table-style
+    {
+        /*Border*/
+            border-width: 0.1vw;
+            border-style: solid;
+            border-color: white;
+    }
+
+/*Estilo das Celulas da Tabela (Titulo)*/
+    .table-style tr th
+    {
+        /*Background*/
+            background-color: #1e2124;
+        
+        /*Text*/
+            text-align: center;
+            font-size: 1.55vw;
+    }
+
+/*Estilo das Celulas da Tabela (Body)*/
+    .table-style tr td
+    {
+        /*Background*/
+            background-color: #1e2124;
+            font-size: 1.35vw;
+    }
+
+/*Mensagem de Erro ou Aviso (Cadastro Feito, etc)*/
+    #mRead,
+    #mCreate,
+    #mUpdate,
+    #mDeletee,
+    #mSearch
+    {
+        /*Text*/
+            text-align: center;
+            font-size: 1.75vw;
+    }
+    #mCreate,
+    #mUpdate,
+    #mDeletee
+    {
+        /*Text*/
+            color: #1e2124;
+
+        /*Position*/
+            position: relative;
+            left: 50%;
+            transform: translate(-50%);
+    }
+/*Row CUD (Create, Update e Delete)*/
+    .row-style
+    {
+        /*Position*/
+            padding-top: 1vw;
+            padding-bottom: 2vw;
+    }
+/*Colunas dentro do Row CUD*/
+    .row-style .col
+    {
+        /*Background*/
+            background-color: #fbfafa;
+        
+        /*Border*/
+            border-radius: 1vw;
+            box-shadow: #283b53 0.5vw 0.5vw 0.5vw;
+
+        /*Size*/
+            width: 30%;
+
+
+    }
+
+/*Coluna Editar*/
+    #colEditar
+    {
+        /*Position*/
+            margin-left: 3vh;
+            margin-right: 3vh;
+    }
+/*Titulos dentro do Row CUD*/
+    .titlesRow
+    {
+        /*Text*/
+            font-family: "Lexend Giga", sans-serif;
+            font-size: 2vw;
+            font-weight: 700;
+            color: #1e2124;
+            text-align: center;
+
+        /*Position*/
+            padding-top: 2vw;
+            padding-bottom: 2vw;
+        
+    }    
+
+/*Botões dentro do Row CUD*/
+    .btn-style
+    {
+        /*Border*/
+            border-width: 0.3vw;
+            border-style: solid;
+            border-color: #1e2124;
+            border-radius: 5vw;
+
+        /*Padding*/
+            padding-top: 1vw;
+            padding-bottom: 1vw;
+            padding-left: 4vh;
+            padding-right: 4vh;
+
+        /*Background*/
+            background-color: #1e2124;
+
+        /*Text*/
+            text-align: center;
+            font-size: 1.55vw;
+            font-weight: 700;
+            color: #fbfafa;
+
+        /*Position*/
+            margin-top: 2vw;
+            margin-bottom: 2vw;
+
+            display: block;
+
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);     
+    }
+    .btn-style:hover
+    {
+        font-size: 1.75vw;
+            
+        /*Transition*/
+            transition: font-size 225ms linear;
+    }
+
+    /*Botão Alterar*/
+        #btnUpdate
+        {
+            display: none;
+        }
+
+/*Input Span (Onde ta escrito o nome do Campo)*/
+    .row-style #basic-addon1
+    {
+        /*Size*/
+            width: 17vh;
+
+        /*Border*/
+            border-width: 0.1vw;
+            border-style: solid;
+            border-color: #1e2124;
+
+            border-top-left-radius: 5vw;
+            border-bottom-left-radius: 5vw;
+
+            border-right: 0;
+
+        /*Position*/
+            position: relative;
+
+        /*Background*/
+            background-color: transparent;
+    }
+    .row-style #basic-addon1 text
+    {
+        /*Position*/
+            margin-left: 2vh;
+
+        /*Text*/
+            font-weight: 500;
+    }
+
+/*Input Formulario*/
+    .row-style .form-control
+    {
+        /*Border*/
+            border-width: 0.1vw;
+            border-style: solid;
+            border-color: #1e2124;
+
+            border-top-right-radius: 5vw;
+            border-bottom-right-radius: 5vw;
+
+            border-left: 0;
+        
+        /*Background*/
+            background-color: transparent;
+
+        /*Text*/
+            font-weight: 300;
+    }
+
+/*Procurar Cliente*/
+
+    /*Titulo*/
+        #titulo-search
+        {
+            /*Text*/
+                font-family: "Lexend Giga", sans-serif;
+                font-size: 2vw;
+                font-weight: 700;            
+
+            /*Position*/
+                padding-top: 2vw;
+                padding-bottom: 1vw;   
+        }
+
+        /*Colunas*/
+            #form-pesquisar .col
+            {
+                /*Size*/
+                    width: 58vh;
+            }
+        /*Input Span (Onde ta escrito o nome do Campo)*/
+            #form-pesquisar #basic-addon1
+            {
+                /*Size*/
+                    width: 18vh;
+
+                /*Border*/
+                    border-width: 0.1vw;
+                    border-style: solid;
+                    border-color: #fbfafa;
+
+                    border-top-left-radius: 5vw;
+                    border-bottom-left-radius: 5vw;
+
+                    border-right: 0;
+
+                /*Position*/
+                    position: relative;
+
+                /*Background*/
+                    background-color: transparent;
+
+                /*Padding*/
+                    padding-left: 4vh;
+            }
+
+            #form-pesquisar  #basic-addon1 text
+            {
+                /*Text*/
+                    font-size: 2vw;
+                    font-weight: 500;
+                    color: #fbfafa;
+            }
+
+        /*Input Formulario*/
+            #form-pesquisar  .form-control
+            {
+                /*Border*/
+                    border-width: 0.1vw;
+                    border-style: solid;
+                    border-color: #fbfafa;
+
+                    border-top-right-radius: 5vw;
+                    border-bottom-right-radius: 5vw;
+
+                    border-left: 0;
+                
+                /*Background*/
+                    background-color: transparent;
+
+                /*Text*/
+                    font-size: 2vw;
+                    font-weight: 300;
+                    color: #fbfafa;
+            }
+        
+        /*Botão Pesquisar*/
+            #btnSearch
+            {
+                /*Border*/
+                    border-width: 0.3vw;
+                    border-style: solid;
+                    border-color: #fbfafa;
+                    border-radius: 5vw;
+
+                /*Padding*/
+                    padding-top: 1vw;
+                    padding-bottom: 1vw;
+                    padding-left: 4vh;
+                    padding-right: 4vh;
+
+                /*Background*/
+                    background-color: #fbfafa;
+
+                /*Text*/
+                    text-align: center;
+                    font-size: 1.55vw;
+                    font-weight: 700;
+                    color: #1e2124;
+
+                /*Position*/
+                    margin-top: 2vw;
+                    margin-bottom: 2vw;
+
+                    display: block;
+
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);     
+            }
+
+            #btnSearch:hover
+            {
+                font-size: 1.75vw;
+                    
+                /*Transition*/
+                    transition: font-size 225ms linear;
+            }
+
+
+/*Fim do Procurar Cliente*/

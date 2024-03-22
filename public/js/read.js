@@ -1,6 +1,7 @@
 const mRead = document.getElementById("mRead");
 const tabelaClientes = document.getElementById("tabelaClientes");
 
+
 async function read(urli) 
 {    
     try 
@@ -20,8 +21,9 @@ async function read(urli)
 
         if (data.length > 0) {
 
-            tabelaClientes.innerHTML = "";
-
+            const tbodyRead = document.getElementById("tbodyRead")
+            tbodyRead.innerHTML = "";
+            
             data.forEach(
             cliente => 
             {
@@ -33,7 +35,7 @@ async function read(urli)
                     <td>${cliente.cidade}</td>
                     <td>${cliente.estado}</td>
                 `;
-                tabelaClientes.appendChild(tr);
+                tbodyRead.appendChild(tr);
             });
         } 
         else 

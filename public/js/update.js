@@ -1,4 +1,4 @@
-const mUpdate = document.getElementById("mEdit");
+const mUpdate = document.getElementById("mUpdate");
 const btnUpdate = document.getElementById("btnUpdate");
 const btnUpdateSearch = document.getElementById("btnUpdateSearch");
 
@@ -19,35 +19,59 @@ async function updateSearch(urli)
 
         const data = await response.json();
 
-        if (data) 
+        if (data && Object.keys(data).length !== 0) 
         {
             const clienteData = document.getElementById("clienteData")
             clienteData.innerHTML = `
-                <label for="nome_update">Nome:</label>
-                <input type="text" id="cliente_id_update_search" name="cliente_id_update_search" value="${data.cliente_id}" disabled><br>
 
-                <label for="nome_update">Nome:</label>
-                <input type="text" id="nome_update" name="nome_update" value="${data.nome}"><br>
+                <!--Campo ID-->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><text>ID</text></span>
+                        <input type="number" class="form-control" aria-label="Username" aria-describedby="basic-addon1" id="cliente_id_update_search" name="cliente_id_update_search" value="${data.cliente_id}" disabled>
+                    </div>
+                <!--Fim do Campo ID-->
 
-                <label for="email_update">Email:</label>
-                <input type="email" id="email_update" name="email_update" value="${data.email}"><br>
+                <!--Campo Nome-->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><text>Nome</text></span>
+                        <input type="name" class="form-control" aria-label="Username" aria-describedby="basic-addon1" id="nome_update" name="nome_update" value="${data.nome}">
+                    </div>
+                <!--Fim do Campo Nome-->
 
-                <label for="cidade_update">Cidade:</label>
-                <input type="text" id="cidade_update" name="cidade_update" value="${data.cidade}"><br>
+                <!--Campo Email-->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><text>Email</text></span>
+                        <input type="email" class="form-control" aria-label="Username" aria-describedby="basic-addon1" id="email_update" name="email_update" value="${data.email}">
+                    </div>
+                <!--Fim do Campo Email-->
+             
+                <!--Campo Cidade-->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><text>Cidade</text></span>
+                        <input type="city" class="form-control" aria-label="Username" aria-describedby="basic-addon1" id="cidade_update" name="cidade_update" value="${data.cidade}">
+                    </div>
+                <!--Fim do Campo Cidade-->
+                
 
-                <label for="estado_update">Estado:</label>
-                <input type="text" id="estado_update" name="estado_update" value="${data.estado}"><br>
+                <!--Campo Estado-->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><text>Estado</text></span>
+                        <input type="state" class="form-control" aria-label="Username" aria-describedby="basic-addon1" id="estado_update" name="estado_update" value="${data.estado}">
+                    </div>
+                <!--Fim do Campo Estado-->
+
             `;
         } 
         else 
         {
-            mSearch.innerText = "Nenhum cliente encontrado";
-            tabelaCliente.innerHTML = ""; 
+            clienteData.innerHTML =  "";
+            mUpdate.innerText = "Nenhum cliente encontrado";
         }
     } 
     catch (error) 
     {
         console.error('Falha ao enviar requisição:', error);
+        mUpdate.innerText = "Erro ao carregar dados do cliente";
     }
 }
 async function update(urli) 
@@ -76,16 +100,16 @@ async function update(urli)
 
         if (!response.ok) 
         {
-            throw new Error('Erro na requisição')
-        }
+            throw new Error('Erro na requisição')        }
         else
         {
-            mCreate.innerText = "Alteração feita";
+            mUpdate.innerText = "Alteração feita";
         }
         
     } 
     catch (error) 
     { 
         console.error('Falha ao enviar requisição:', error);
+        mUpdate.innerText = 'Falha ao enviar requisição:', error;
     }
 }
